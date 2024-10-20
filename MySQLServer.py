@@ -1,11 +1,12 @@
 import mysql.connector
-try:
-    mydb= mysql.connector.connect(
+mydb= mysql.connector.connect(
         host = "localhost",
         user = "root",
         password = "012303210eyadzanaty",
-        database = "alx_book_store" 
     )
+mycursor = mydb.cursor()
+try:
+    mycursor.execute('CREATE DATABASE IF NOT EXISTS alx_book_store;')
 except Exception as e:
     print(e)
 else:
